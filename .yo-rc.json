@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.fininfo.java"
+    },
+    "jhipsterVersion": "6.10.1",
+    "applicationType": "microservice",
+    "baseName": "locative",
+    "packageName": "com.fininfo.java",
+    "packageFolder": "com/fininfo/java",
+    "serverPort": "8899",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZWQyNTU2NWE0NDY1NTBmMDgzYzE1MDcwZDYzOGFmNTNiNzBmZDY0M2JkODBjYzc5MjgxMjYwYjFkZjQxOTQwZDgwMmI4ZWY3YmM2MGI2MWU3YTg5ZDFmOGU0MWU4MjJhMzU4NzhkOWIxM2JmZWY0ODYwMTVkZGFlODA1ZjJkODY=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1621931000667,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
