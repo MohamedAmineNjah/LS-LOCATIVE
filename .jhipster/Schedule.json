@@ -1,0 +1,43 @@
+{
+  "name": "Schedule",
+  "fields": [
+    {
+      "fieldName": "amountSchedule",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "bill",
+      "otherEntityRelationshipName": "schedule",
+      "relationshipName": "bill"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "lotBail",
+      "otherEntityRelationshipName": "schedule",
+      "relationshipName": "lotBail",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "rent",
+      "otherEntityRelationshipName": "schedule",
+      "relationshipName": "rent",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210525085131",
+  "entityTableName": "schedule",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "locative",
+  "applications": "*",
+  "microserviceName": "locative"
+}

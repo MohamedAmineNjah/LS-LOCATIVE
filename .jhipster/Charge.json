@@ -1,0 +1,46 @@
+{
+  "name": "Charge",
+  "fields": [
+    {
+      "fieldName": "statusCharge",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chargeDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "designation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reference",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amountCharge",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "lotBail",
+      "otherEntityRelationshipName": "charge",
+      "relationshipName": "lotBail",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210525083431",
+  "entityTableName": "charge",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "locative",
+  "applications": "*",
+  "microserviceName": "locative"
+}

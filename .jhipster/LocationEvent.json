@@ -1,0 +1,51 @@
+{
+  "name": "LocationEvent",
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "costPrice",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "deadline",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "assetCode",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "locationRegulation",
+      "otherEntityRelationshipName": "locationEvent",
+      "relationshipName": "locationRegulation",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210525084231",
+  "entityTableName": "location_event",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "locative",
+  "applications": "*",
+  "microserviceName": "locative"
+}

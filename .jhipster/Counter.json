@@ -1,0 +1,44 @@
+{
+  "name": "Counter",
+  "fields": [
+    {
+      "fieldName": "counterTitle",
+      "fieldType": "IEnumTitle",
+      "fieldValues": "EAU,EAUCHAUDE,ELECTRICITY"
+    },
+    {
+      "fieldName": "unity",
+      "fieldType": "IEnumUnity",
+      "fieldValues": "M3,CALORIES,KWH"
+    },
+    {
+      "fieldName": "decimal",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "lotBail",
+      "otherEntityRelationshipName": "counter",
+      "relationshipName": "lotBail",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210525083631",
+  "entityTableName": "counter",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "locative",
+  "applications": "*",
+  "microserviceName": "locative"
+}

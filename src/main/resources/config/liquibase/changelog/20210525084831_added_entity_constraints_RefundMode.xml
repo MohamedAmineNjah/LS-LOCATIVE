@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity RefundMode.
+    -->
+    <changeSet id="20210525084831-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="rent_id"
+                                 baseTableName="refund_mode"
+                                 constraintName="fk_refund_mode_rent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rent"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -58,11 +58,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         .and()
             .authorizeRequests()
             .antMatchers("/api/authenticate").permitAll()
-            .antMatchers("/api/**").authenticated()
-            .antMatchers("/management/health").permitAll()
-            .antMatchers("/management/info").permitAll()
-            .antMatchers("/management/prometheus").permitAll()
-            .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
+            // .antMatchers("/api/**").authenticated()
+             .antMatchers("/management/health").permitAll()
+             .antMatchers("/management/info").permitAll()
+             .antMatchers("/management/prometheus").permitAll()
+          //   .antMatchers("/api/bails").permitAll()
+             .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
         .and()
             .apply(securityConfigurerAdapter());
         // @formatter:on

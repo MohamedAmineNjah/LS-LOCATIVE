@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity LotBail.
+    -->
+    <changeSet id="20210525084431-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="bail_id"
+                                 baseTableName="lot_bail"
+                                 constraintName="fk_lot_bail_bail_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bail"/>
+
+    </changeSet>
+</databaseChangeLog>

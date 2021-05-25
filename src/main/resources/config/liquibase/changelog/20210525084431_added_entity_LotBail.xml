@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity LotBail.
+    -->
+    <changeSet id="20210525084431-1" author="jhipster">
+        <createTable tableName="lot_bail">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="code_lot" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="building" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stairs" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="comments" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="technical_information" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="creation_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="acquisation_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="surface" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="parkings_number" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="floors_number" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="real_number_of_lot" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="number_of_secondary_units" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="out_door_parking" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="lot_for_multiple_occupation" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="price_of_square_meter" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="rental_value_for_square_meter" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="transfer_amount" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="acquisation_amount" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="rent_amount" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pool_factor" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="maturity_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="convertibility_indicator" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="subordination_indicator" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="indexed" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="eligibility_indicator" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="risk_premium" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="gotouarantor_code" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="guarantor_description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="amortization_table_management" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="variable_rate" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="bail_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20210525084431-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20210525084431-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/lot_bail.csv"
+                  separator=";"
+                  tableName="lot_bail">
+            <column name="id" type="numeric"/>
+            <column name="name" type="string"/>
+            <column name="code_lot" type="string"/>
+            <column name="building" type="string"/>
+            <column name="stairs" type="string"/>
+            <column name="comments" type="string"/>
+            <column name="technical_information" type="string"/>
+            <column name="creation_date" type="date"/>
+            <column name="acquisation_date" type="date"/>
+            <column name="surface" type="numeric"/>
+            <column name="parkings_number" type="numeric"/>
+            <column name="floors_number" type="numeric"/>
+            <column name="real_number_of_lot" type="numeric"/>
+            <column name="number_of_secondary_units" type="numeric"/>
+            <column name="out_door_parking" type="boolean"/>
+            <column name="lot_for_multiple_occupation" type="boolean"/>
+            <column name="price_of_square_meter" type="numeric"/>
+            <column name="rental_value_for_square_meter" type="numeric"/>
+            <column name="transfer_amount" type="numeric"/>
+            <column name="acquisation_amount" type="numeric"/>
+            <column name="rent_amount" type="numeric"/>
+            <column name="pool_factor" type="numeric"/>
+            <column name="maturity_date" type="date"/>
+            <column name="convertibility_indicator" type="boolean"/>
+            <column name="subordination_indicator" type="boolean"/>
+            <column name="indexed" type="boolean"/>
+            <column name="eligibility_indicator" type="boolean"/>
+            <column name="risk_premium" type="numeric"/>
+            <column name="gotouarantor_code" type="numeric"/>
+            <column name="guarantor_description" type="string"/>
+            <column name="amortization_table_management" type="boolean"/>
+            <column name="variable_rate" type="boolean"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,27 @@
+{
+  "name": "Periodicity",
+  "fields": [
+    {
+      "fieldName": "periodicityType",
+      "fieldType": "IEnumperiodicityType",
+      "fieldValues": "ANNULE,MONSUEL,HEBDOMADAIRE"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210525084531",
+  "entityTableName": "periodicity",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "locative",
+  "applications": "*",
+  "microserviceName": "locative"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Bill",
+  "fields": [
+    {
+      "fieldName": "reference",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amountExludingTax",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "tva",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "ttc",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "billDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "reglementMethod",
+      "fieldType": "IEnumMethode",
+      "fieldValues": "CHEQUE,ESPECE,VIREMENT,LETTREDECHANGE"
+    },
+    {
+      "fieldName": "billStatus",
+      "fieldType": "IEnumStatus",
+      "fieldValues": "ENCOURSDEVALIDATION,VALIDE,ENATTENTEDEPAYEMENT,PAYE"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "schedule",
+      "otherEntityRelationshipName": "bill",
+      "relationshipName": "schedule",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210525083331",
+  "entityTableName": "bill",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "locative",
+  "applications": "*",
+  "microserviceName": "locative"
+}

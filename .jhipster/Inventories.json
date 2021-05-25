@@ -1,0 +1,43 @@
+{
+  "name": "Inventories",
+  "fields": [
+    {
+      "fieldName": "inventoriesType",
+      "fieldType": "IEnumInventory",
+      "fieldValues": "ENTRE,SORTIE"
+    },
+    {
+      "fieldName": "inventoriesDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "inventoriesStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "generalObservation",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "lotBail",
+      "otherEntityRelationshipName": "inventories",
+      "relationshipName": "lotBail",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20210525083931",
+  "entityTableName": "inventories",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "locative",
+  "applications": "*",
+  "microserviceName": "locative"
+}

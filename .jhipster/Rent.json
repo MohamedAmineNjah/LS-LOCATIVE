@@ -1,0 +1,101 @@
+{
+  "name": "Rent",
+  "fields": [
+    {
+      "fieldName": "nominalValue",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "taux",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "mode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "capital",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "refundAmount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "startExcluded",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "monthEnd",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "endExcluded",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "rateValue",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "couponDecimalNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "couponFirstDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "couponLastDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "refundFirstDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "refundDecimalNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "refundLastDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "periodicity",
+      "otherEntityRelationshipName": "rent",
+      "relationshipName": "periodicity",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "schedule",
+      "otherEntityRelationshipName": "rent",
+      "relationshipName": "schedule"
+    }
+  ],
+  "changelogDate": "20210525085031",
+  "entityTableName": "rent",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "locative",
+  "applications": "*",
+  "microserviceName": "locative"
+}

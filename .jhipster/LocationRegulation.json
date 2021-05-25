@@ -1,0 +1,33 @@
+{
+  "name": "LocationRegulation",
+  "fields": [
+    {
+      "fieldName": "regulationDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "reglementType",
+      "otherEntityRelationshipName": "locationRegulation",
+      "relationshipName": "reglementType"
+    }
+  ],
+  "changelogDate": "20210525084331",
+  "entityTableName": "location_regulation",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "locative",
+  "applications": "*",
+  "microserviceName": "locative"
+}

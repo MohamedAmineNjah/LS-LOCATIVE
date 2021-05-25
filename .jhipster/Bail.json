@@ -1,0 +1,68 @@
+{
+  "name": "Bail",
+  "fields": [
+    {
+      "fieldName": "codeBail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "durationBail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typeBail",
+      "fieldType": "IEnumTypeBail",
+      "fieldValues": "BAILLOGEMENTNU,BAILLOGEMENTMEUBLE"
+    },
+    {
+      "fieldName": "signatureDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "firstRentDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "destinationLocal",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "idOPCI",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Bailstatus",
+      "fieldValues": "BAILWAITINGLOTS,BAILWAITINGLOCATAIRE,BAILWAITINGFORMULAIRE,CANCELLED,CLOSED"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "locataire",
+      "otherEntityRelationshipName": "bail",
+      "relationshipName": "locataire",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "garant",
+      "otherEntityRelationshipName": "bail",
+      "relationshipName": "garant",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210525083131",
+  "entityTableName": "bail",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "locative",
+  "applications": "*",
+  "microserviceName": "locative"
+}

@@ -14,7 +14,44 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083131_added_entity_Bail.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083231_added_entity_Base.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083331_added_entity_Bill.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083431_added_entity_Charge.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083531_added_entity_ClosingEvent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083631_added_entity_Counter.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083731_added_entity_Frequency.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083831_added_entity_Garant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083931_added_entity_Inventories.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084031_added_entity_LeaveProcess.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084131_added_entity_Locataire.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084231_added_entity_LocationEvent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084331_added_entity_LocationRegulation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084431_added_entity_LotBail.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084531_added_entity_Periodicity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084631_added_entity_RateType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084731_added_entity_RefundFrequency.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084831_added_entity_RefundMode.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084931_added_entity_ReglementType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525085031_added_entity_Rent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525085131_added_entity_Schedule.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20210525083131_added_entity_constraints_Bail.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083231_added_entity_constraints_Base.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083331_added_entity_constraints_Bill.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083431_added_entity_constraints_Charge.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083631_added_entity_constraints_Counter.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083731_added_entity_constraints_Frequency.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525083931_added_entity_constraints_Inventories.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084031_added_entity_constraints_LeaveProcess.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084231_added_entity_constraints_LocationEvent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084431_added_entity_constraints_LotBail.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084631_added_entity_constraints_RateType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084731_added_entity_constraints_RefundFrequency.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084831_added_entity_constraints_RefundMode.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525084931_added_entity_constraints_ReglementType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525085031_added_entity_constraints_Rent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210525085131_added_entity_constraints_Schedule.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

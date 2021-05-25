@@ -1,0 +1,25 @@
+{
+  "name": "Base",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "rent",
+      "otherEntityRelationshipName": "base",
+      "relationshipName": "rent",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210525083231",
+  "entityTableName": "base",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "locative",
+  "applications": "*",
+  "microserviceName": "locative"
+}

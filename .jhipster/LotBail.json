@@ -1,0 +1,168 @@
+{
+  "name": "LotBail",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codeLot",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "building",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stairs",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "comments",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "technicalInformation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "acquisationDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "surface",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "parkingsNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "floorsNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "realNumberOfLot",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "numberOfSecondaryUnits",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "outDoorParking",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "lotForMultipleOccupation",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "priceOfSquareMeter",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "rentalValueForSquareMeter",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "transferAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "acquisationAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "rentAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "poolFactor",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maturityDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "convertibilityIndicator",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "subordinationIndicator",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "indexed",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "eligibilityIndicator",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "riskPremium",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "gotouarantorCode",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "guarantorDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amortizationTableManagement",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "variableRate",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "charge",
+      "otherEntityRelationshipName": "lotBail",
+      "relationshipName": "charge"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "counter",
+      "otherEntityRelationshipName": "lotBail",
+      "relationshipName": "counter"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "schedule",
+      "otherEntityRelationshipName": "lotBail",
+      "relationshipName": "schedule"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "bail",
+      "otherEntityRelationshipName": "lotBail",
+      "relationshipName": "bail",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210525084431",
+  "entityTableName": "lot_bail",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "locative",
+  "applications": "*",
+  "microserviceName": "locative"
+}

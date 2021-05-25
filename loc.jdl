@@ -1,0 +1,208 @@
+entity Bail {
+  codeBail String,
+  durationBail String,
+  typeBail IEnumTypeBail,
+  signatureDate LocalDate,
+  firstRentDate LocalDate,
+  destinationLocal String,
+  idOPCI Long,
+  status Bailstatus
+}
+entity Base
+entity Bill {
+  reference String,
+  amountExludingTax BigDecimal,
+  tva BigDecimal,
+  ttc BigDecimal,
+  billDate LocalDate,
+  reglementMethod IEnumMethode,
+  billStatus IEnumStatus
+}
+entity Charge {
+  statusCharge String,
+  chargeDate LocalDate,
+  designation String,
+  reference String,
+  amountCharge BigDecimal
+}
+entity ClosingEvent {
+  description String,
+  closingDate LocalDate,
+  endDate LocalDate
+}
+entity Counter {
+  counterTitle IEnumTitle,
+  unity IEnumUnity,
+  decimal Integer,
+  comment String
+}
+entity Frequency
+entity Garant {
+  birthDate LocalDate,
+  profession String,
+  nAllocataireCAF Integer
+}
+entity Inventories {
+  inventoriesType IEnumInventory,
+  inventoriesDate LocalDate,
+  inventoriesStatus String,
+  generalObservation String
+}
+entity LeaveProcess
+entity Locataire {
+  birthDate LocalDate,
+  profession String,
+  nAllocataireCAF Integer
+}
+entity LocationEvent {
+  description String,
+  startDate LocalDate,
+  endDate LocalDate,
+  costPrice Double,
+  deadline LocalDate,
+  assetCode Integer
+}
+entity LocationRegulation {
+  regulationDate LocalDate,
+  amount BigDecimal
+}
+entity LotBail {
+  name String,
+  codeLot String,
+  building String,
+  stairs String,
+  comments String,
+  technicalInformation String,
+  creationDate LocalDate,
+  acquisationDate LocalDate,
+  surface BigDecimal,
+  parkingsNumber Integer,
+  floorsNumber Integer,
+  realNumberOfLot Integer,
+  numberOfSecondaryUnits Integer,
+  outDoorParking Boolean,
+  lotForMultipleOccupation Boolean,
+  priceOfSquareMeter BigDecimal,
+  rentalValueForSquareMeter BigDecimal,
+  transferAmount BigDecimal,
+  acquisationAmount BigDecimal,
+  rentAmount BigDecimal,
+  poolFactor Integer,
+  maturityDate LocalDate,
+  convertibilityIndicator Boolean,
+  subordinationIndicator Boolean,
+  indexed Boolean,
+  eligibilityIndicator Boolean,
+  riskPremium Integer,
+  gotouarantorCode Integer,
+  guarantorDescription String,
+  amortizationTableManagement Boolean,
+  variableRate Boolean
+}
+entity Periodicity {
+  periodicityType IEnumperiodicityType,
+  value BigDecimal
+}
+entity RateType
+entity RefundFrequency
+entity RefundMode
+entity ReglementType {
+  name String,
+  description String
+}
+entity Rent {
+  nominalValue BigDecimal,
+  taux Double,
+  mode String,
+  capital Integer,
+  startDate LocalDate,
+  endDate LocalDate,
+  refundAmount Integer,
+  startExcluded Boolean,
+  monthEnd Boolean,
+  endExcluded Boolean,
+  rateValue Integer,
+  couponDecimalNumber Integer,
+  couponFirstDate LocalDate,
+  couponLastDate LocalDate,
+  refundFirstDate LocalDate,
+  refundDecimalNumber Integer,
+  refundLastDate LocalDate
+}
+entity Schedule {
+  amountSchedule BigDecimal
+}
+enum IEnumTypeBail {
+  BAILLOGEMENTNU,
+  BAILLOGEMENTMEUBLE
+}
+enum Bailstatus {
+  BAILWAITINGLOTS,
+  BAILWAITINGLOCATAIRE,
+  BAILWAITINGFORMULAIRE,
+  CANCELLED,
+  CLOSED
+}
+enum IEnumMethode {
+  CHEQUE,
+  ESPECE,
+  VIREMENT,
+  LETTREDECHANGE
+}
+enum IEnumStatus {
+  ENCOURSDEVALIDATION,
+  VALIDE,
+  ENATTENTEDEPAYEMENT,
+  PAYE
+}
+enum IEnumTitle {
+  EAU,
+  EAUCHAUDE,
+  ELECTRICITY
+}
+enum IEnumUnity {
+  M3,
+  CALORIES,
+  KWH
+}
+enum IEnumInventory {
+  ENTRE,
+  SORTIE
+}
+enum IEnumperiodicityType {
+  ANNULE,
+  MONSUEL,
+  HEBDOMADAIRE
+}
+
+relationship OneToOne {
+  Bail{locataire} to Locataire,
+  LocationEvent{locationRegulation} to LocationRegulation,
+  Rent{periodicity} to Periodicity
+}
+relationship OneToMany {
+  Schedule{bill} to Bill{schedule},
+  LotBail{charge} to Charge{lotBail},
+  LotBail{counter} to Counter{lotBail},
+  LocationRegulation{reglementType} to ReglementType{locationRegulation},
+  LotBail{schedule} to Schedule{lotBail},
+  Rent{schedule} to Schedule{rent}
+}
+relationship ManyToOne {
+  Bail{garant} to Garant,
+  Base{rent} to Rent,
+  Frequency{rent} to Rent,
+  Inventories{lotBail(name)} to LotBail,
+  LeaveProcess{rent} to Rent,
+  LotBail{bail} to Bail,
+  RateType{rent} to Rent,
+  RefundFrequency{rent} to Rent,
+  RefundMode{rent} to Rent
+}
+
+dto Bail, Base, Bill, Charge, ClosingEvent, Counter, Frequency, Garant, Inventories, LeaveProcess, Locataire, LocationEvent, LocationRegulation, LotBail, Periodicity, RateType, RefundFrequency, RefundMode, ReglementType, Rent, Schedule with mapstruct
+paginate Bail, Base, Bill, Charge, ClosingEvent, Counter, Frequency, Garant, Inventories, LeaveProcess, Locataire, LocationEvent, LocationRegulation, LotBail, Periodicity, RateType, RefundFrequency, RefundMode, ReglementType, Rent, Schedule with pagination
+service Bail, Base, Bill, Charge, ClosingEvent, Counter, Frequency, Garant, Inventories, LeaveProcess, Locataire, LocationEvent, LocationRegulation, LotBail, Periodicity, RateType, RefundFrequency, RefundMode, ReglementType, Rent, Schedule with serviceClass
+microservice Bail, Base, Bill, Charge, ClosingEvent, Counter, Frequency, Garant, Inventories, LeaveProcess, Locataire, LocationEvent, LocationRegulation, LotBail, Periodicity, RateType, RefundFrequency, RefundMode, ReglementType, Rent, Schedule with locative
+filter Bail, Base, Bill, Charge, ClosingEvent, Counter, Frequency, Garant, Inventories, LeaveProcess, Locataire, LocationEvent, LocationRegulation, LotBail, Periodicity, RateType, RefundFrequency, RefundMode, ReglementType, Rent, Schedule
+clientRootFolder Bail, Base, Bill, Charge, ClosingEvent, Counter, Frequency, Garant, Inventories, LeaveProcess, Locataire, LocationEvent, LocationRegulation, LotBail, Periodicity, RateType, RefundFrequency, RefundMode, ReglementType, Rent, Schedule with locative
