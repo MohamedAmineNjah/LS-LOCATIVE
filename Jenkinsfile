@@ -3,7 +3,7 @@ agent any
 stages{
 stage('clone and clean repo'){
 steps {
-bat "rmdir /Q /S LS-LOCATIVE"
+//bat "rmdir /Q /S LS-LOCATIVE"
 bat "git clone https://github.com/MohamedAmineNjah/LS-LOCATIVE.git"
 bat "mvn clean -f LS-LOCATIVE"
 }
